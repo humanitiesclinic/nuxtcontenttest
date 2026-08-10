@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: articles } = await useAsyncData('articles-list', () => {
-  return queryCollection('articles').order('_id', 'ASC').select('title', 'path', '_id', '_path').all()
+return queryCollection('articles').all()
 })
 </script>
 
@@ -8,7 +8,7 @@ const { data: articles } = await useAsyncData('articles-list', () => {
   <div>
     <h1>Articles</h1>
     <ul>
-      <li v-for="article in articles" :key="article._id">
+      <li v-for="article in articles" :key="article._path">
         <NuxtLink :to="article._path">{{ article.title || article._path }}</NuxtLink>
       </li>
     </ul>
