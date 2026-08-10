@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: pages } = await useAsyncData('pages-list', () => {
-  return queryCollection('pages').find()
+  return queryCollection('pages').order('_id', 'ASC').select('title', 'path', '_id', '_path').all()
 })
 </script>
 
