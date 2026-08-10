@@ -33,5 +33,6 @@ export default defineContentConfig({
     mnemonics: defineCollection({
       type: 'page',
       source: 'mnemonics/**',
-  },
+    })
+  }
 })
