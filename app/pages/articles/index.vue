@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: articles } = await useAsyncData('articles-list', () => {
-return queryCollection('articles').all()
+return queryCollection('articles').limit(20).all()
 })
 </script>
 

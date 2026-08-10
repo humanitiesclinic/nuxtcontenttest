@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: mnemonics } = await useAsyncData('mnemonics-list', () => {
-return queryCollection('mnemonics').all()
+return queryCollection('mnemonics').limit(20).all()
 })
 </script>
 

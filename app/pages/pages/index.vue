@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: pages } = await useAsyncData('pages-list', () => {
-return queryCollection('pages').all()
+return queryCollection('pages').limit(20).all()
 })
 </script>
 
